@@ -1,0 +1,38 @@
+ion-content {
+  height: 90%;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+  }
+
+  ion-toolbar, ion-header, ion-buttons {
+    pointer-events: auto; /* Ensure pointer events are enabled */
+  }
+
+  ion-button {
+    position: relative;
+    z-index: 10; /* Ensure the button is on top */
+    // position: absolute
+  }
+
+  ::ng-deep ion-button {
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  .large-avatar {
+    width: 100px;
+    height: 100px;
+    align-self: flex-start;
+
+    img {
+      border-radius: 0;
+      
+    }
+}

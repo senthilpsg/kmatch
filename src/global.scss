@@ -31,3 +31,8 @@
 @import 'src/theme/fonts.scss';
 @import 'src/theme/utilities.scss';
 @import 'src/theme/components.scss';
+
+
+ion-header, ion-toolbar, ion-buttons {
+    pointer-events: auto !important; /* Ensure the elements are clickable */
+  }

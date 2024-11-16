@@ -1,0 +1,56 @@
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f4f8;  // Light background color for contrast
+  
+    form {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ffffff;  // White background for the form container
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
+  
+      ion-item {
+        --highlight-color-focused: #3880ff;
+        --background: transparent;  // Removes default gray background
+        --border-radius: 8px;
+        --padding-start: 0;  // Aligns input with the label
+  
+        margin-top: 20px;
+  
+        ion-label {
+          font-size: 1rem;
+          color: #6b7280;  // Light gray for labels
+          font-weight: 500;
+        }
+  
+        ion-input {
+          --padding-start: 5px;
+          font-size: 1rem;
+          color: #333;  // Dark color for input text
+        }
+  
+        &::part(native) {
+          border-bottom: 1px solid #ccc;  // Subtle bottom border for inputs
+        }
+  
+        &:focus-within {
+          --highlight-color-focused: #3880ff;  // Highlight color on focus
+        }
+      }
+  
+      ion-button {
+        margin-top: 30px;
+        width: 100%;
+        --background: #3880ff;
+        --color: #ffffff;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-radius: 8px;
+      }
+    }
+  }
+  

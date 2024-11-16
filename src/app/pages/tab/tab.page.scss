@@ -1,0 +1,50 @@
+// ion-content {
+//   height: 90%;
+// }
+ion-button {
+    --background: var(--ion-color-danger);
+    --color: white;
+    // margin-top: 20px;
+  }
+
+  ion-header {
+    background-color: #3880ff; // Set your desired color here
+    color: white; // Change text color to white for contrast
+  }
+  
+  ion-toolbar {
+    --background: #3880ff; // Change the background color of the toolbar
+    --color: white; // Set the text color for the toolbar items
+  }
+
+  ion-tab-bar {
+    --background: #f8f8f8 ; // Set your desired background color
+    --color-selected: #3880ff; // Color for the selected tab icon and label
+    --color: #999999; // Color for unselected tab icon and label
+  }
+
+  ion-tab-button {
+    --background: transparent; // Ensure the button background is transparent
+    --color-selected: #3880ff; // Color for selected tab
+    --color: #999999; // Color for unselected tab
+
+    &.tab-selected {
+        --background: rgba(56, 128, 255, 0.1); // Optional: background color for the selected tab
+        border-radius: 10px; // Optional: rounding corners for selected tab
+      }
+  }
+  
+  ion-tab-button:hover {
+    --background: rgba(56, 128, 255, 0.1); // Light background on hover
+  }
+
+  ion-tab-button.active-tab {
+    background-color: var(--ion-color-primary);
+    color: white;
+  }
+  
+  ion-tab-button {
+    --color-selected: var(--ion-color-primary);
+  }
+
+  

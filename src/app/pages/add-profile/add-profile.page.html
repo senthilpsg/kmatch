@@ -1,0 +1,165 @@
+<!-- <ng-container > -->
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tab/tab1">
+        <ion-icon name="arrow-back"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Post</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isViewInitialized"
+  class="ion-padding">
+  <form (ngSubmit)="submitPost()">
+    <ion-item>
+      <ion-input [(ngModel)]="postData.name"
+        name="name"
+        label="Name"
+        label-placement="stacked"
+        aria-label="Name"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <!-- <ion-item>
+      <ion-textarea [(ngModel)]="postData.content"
+        name="content"
+        label="Content"
+        label-placement="stacked"
+        aria-label="Content"
+        required>
+      </ion-textarea>
+    </ion-item> -->
+
+    <!-- Custom Fields -->
+    <ion-item>
+      <ion-input [(ngModel)]="postData.father_name"
+        name="father_name"
+        label="Fathers Name"
+        label-placement="stacked"
+        aria-label="Fathers Name">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="postData.mother_name"
+        name="mothers_name"
+        label="Mothers Name"
+        label-placement="stacked"
+        aria-label="Mothers Name">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea [(ngModel)]="postData.address"
+        name="address"
+        label="Address"
+        label-placement="stacked"
+        aria-label="Aontent"
+        required>
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.pincode"
+        name="pincode"
+        label="Pin Code"
+        label-placement="stacked"
+        aria-label="Pin Code">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.kulam"
+        name="kulam"
+        label="Kulam"
+        label-placement="stacked"
+        aria-label="Kulam">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.koil"
+        name="koil"
+        label="Koil"
+        label-placement="stacked"
+        aria-label="Koil">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.education"
+        name="education"
+        label="Education"
+        label-placement="stacked"
+        aria-label="Education">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.occupation"
+        name="occupation"
+        label="Occupation"
+        label-placement="stacked"
+        aria-label="Occupation">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.raasi"
+        name="raasi"
+        label="Rasi"
+        label-placement="stacked"
+        aria-label="Rasi">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="postData.star"
+        name="star"
+        label="Nakshatram"
+        label-placement="stacked"
+        aria-label="Nakshatram">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="postData.sevvai"
+        name="sevvai"
+        label="Sevvai"
+        label-placement="stacked"
+        aria-label="Sevvai">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="postData.rahu_kethu"
+        name="rahu_kethu"
+        label="Rahu Kethu"
+        label-placement="stacked"
+        aria-label="Rahu Kethu">
+      </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input [(ngModel)]="postData.dob"
+        name="dob"
+        label="Date of Birth"
+        label-placement="stacked"
+        type="date"
+        aria-label="Date of Birth">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="full"
+      type="submit">Create Post</ion-button>
+  </form>
+</ion-content>
+
+<!-- </ng-container> -->

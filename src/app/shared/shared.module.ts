@@ -32,6 +32,7 @@ import { SharedExampleComponent } from './components/shared-example/shared-examp
 import { ModalExampleComponent } from './components/modal-example/modal-example.component';
 import { FieldDatetimeComponent } from './components/field-datetime/field-datetime.component';
 import { ContentSegmentComponent } from './components/content-segment/content-segment.component';
+import { MenuPopoverComponent } from './custom-components/menu-popover/menu-popover.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ContentSegmentComponent } from './components/content-segment/content-se
     FieldFileComponent,
     FieldDatetimeComponent,
     FieldValidationIconComponent,
+    MenuPopoverComponent
   ],
   imports: [
     CommonModule,
@@ -80,6 +82,7 @@ import { ContentSegmentComponent } from './components/content-segment/content-se
     FieldFileComponent,
     FieldDatetimeComponent,
     FieldValidationIconComponent,
+    MenuPopoverComponent
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

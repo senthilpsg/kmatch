@@ -25,6 +25,8 @@ import { CustomTranslationsLoaderService } from './core/services/custom-translat
 
 import { ApiInterceptor } from './core/interceptors/api/api.interceptor';
 
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -40,6 +42,7 @@ import { ApiInterceptor } from './core/interceptors/api/api.interceptor';
         deps: [HttpClient],
       },
     }),
+    IonicStorageModule.forRoot()
   ],
   providers: [
     ExampleCoreService,
@@ -56,4 +59,4 @@ import { ApiInterceptor } from './core/interceptors/api/api.interceptor';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

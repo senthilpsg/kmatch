@@ -38,6 +38,7 @@
     "@angular/router": "^16.2.6",
     "@ionic/angular": "^7.4.1",
     "@ionic/core": "^7.0.6",
+    "@ionic/storage-angular": "^4.0.0",
     "@ngneat/elf": "^2.4.0",
     "@ngneat/elf-cli-ng": "^1.0.0",
     "@ngneat/elf-entities": "^4.5.0",
