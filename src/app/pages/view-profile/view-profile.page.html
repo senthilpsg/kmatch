@@ -1,0 +1,186 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="editProfile()">
+        Edit
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!loading">
+
+  <ion-card>
+    <img [src]="profileImage"
+      alt="Slide 1"
+      class="profile-image">
+    <ion-card-header>
+      <!-- <ion-slides [options]="slideOptions">
+        <ion-slide>
+          <img [src]="profileImage"
+            alt="Slide 1">
+        </ion-slide>
+        <ion-slide>
+          <img [src]="profileImage"
+            alt="Slide 1">
+        </ion-slide>
+        <ion-slide>
+          <img [src]="profileImage"
+            alt="Slide 1">
+        </ion-slide>
+
+      </ion-slides> -->
+      <ion-card-title class="ion-text-center"> {{ "Devi Priya" }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Personal Details</ion-card-title>
+    </ion-card-header>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Name:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.name }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Age:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ '34' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Gender:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.gender ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Father Name:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.father_name ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Mothers Name:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.mother_name ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Kulam:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.kulam ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Kula Deivam:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.koil ?? '' }}
+        </ion-col>
+      </ion-row>
+
+      <!-- Add more fields as needed -->
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Education & Occupation</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col size="5">
+          <strong>Education:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.education ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Occupation:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.occupation ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Location:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ 'Namakkal' }}
+        </ion-col>
+      </ion-row>
+      <!-- Add more fields as needed -->
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Horoscope</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+
+      <ion-row>
+        <ion-col size="5">
+          <strong>Raasi:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.raasi ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Nakshatram:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.star ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Sevvai:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.sevvai ?? '' }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="5">
+          <strong>Rahu Kethu:</strong>
+        </ion-col>
+        <ion-col size="7">
+          {{ profile.rahu_kethu ?? '' }}
+        </ion-col>
+      </ion-row>
+      <!-- Add more fields as needed -->
+    </ion-grid>
+  </ion-card>
+  <ion-button expand="block"
+    (click)="deleteProfile()">
+    Delete
+  </ion-button>
+
+</ion-content>

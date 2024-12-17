@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { AuthService } from 'src/app/core/api/auth/auth.service';
 import { WordpressService } from 'src/app/core/api/wordpress.service';
-
-import { LoadingController } from '@ionic/angular';
+import { LoaderService } from 'src/app/core/loader.service';
 import { Router } from '@angular/router';
+
 
 @Component({
     selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginPage {
 
     constructor(
         private authService: AuthService,
-        private loadingController: LoadingController,
+        private loaderService: LoaderService,
         private router: Router,
         private wordpressService: WordpressService
     ) { }
@@ -26,11 +26,7 @@ export class LoginPage {
         this.error = false;
 
         // Show loading spinner
-        const loading = await this.loadingController.create({
-            message: 'Logging in...',
-            spinner: 'crescent',
-        });
-        await loading.present();
+        const loading = await this.loaderService.showLoader("Logging in....");
 
         // Call the login method
         this.authService.login(this.username, this.password).subscribe(
@@ -44,7 +40,8 @@ export class LoginPage {
                     // Fetch and save user details
                     this.wordpressService.getCurrentUser().subscribe(
                         async (user) => {
-                            await loading.dismiss();  // Dismiss the loading spinner
+                            this.loaderService.dismissLoader();
+                            this.loaderService.showSuccess("Login Successful")
                             //localStorage.setItem('userDetails', JSON.stringify(user));
                             this.authService.setCurrentUser(user);
                             this.router.navigate(['/tab']);
@@ -62,7 +59,8 @@ export class LoginPage {
                 }
             },
             async (error: any) => {
-                await loading.dismiss();  // Dismiss the loading spinner on error
+                this.loaderService.dismissLoader();
+                this.loaderService.showError("Login Error")
                 this.error = true;
                 console.error('Login error', error);
             }

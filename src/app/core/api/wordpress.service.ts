@@ -37,7 +37,7 @@ export class WordpressService {
      */
     getPost(id: number): Observable<any> {
         // Perform a GET request to fetch the post with the specified ID
-        return this.http.get(`${this.apiUrl}/posts/${id}`);
+        return this.http.get(`${this.apiUrl}/posts/${id}?_embed`);
     }
 
     getCategories(): Observable<any> {
@@ -71,6 +71,27 @@ export class WordpressService {
                 });
 
                 return this.http.post(`${this.apiUrl}/posts`, postData, { headers });
+            })
+        );
+    }
+
+    deletePost(postId: number): Observable<any> {
+        // const url = `${this.apiUrl}/posts/${postId}?force=true`; // Replace this.apiUrl with your WordPress REST API URL
+        // const headers = new HttpHeaders({
+        //   'Authorization': `Bearer ${this.token}`, // Replace `this.token` with your JWT token
+        // });
+
+        // return this.http.delete(url, { headers });
+
+        return from(this.getToken()).pipe(
+            switchMap(token => {
+                const url = `${this.apiUrl}/posts/${postId}?force=true`; // Replace this.apiUrl with your WordPress REST API URL
+                const headers = new HttpHeaders({
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                });
+
+                return this.http.delete(url, { headers });
             })
         );
     }

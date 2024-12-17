@@ -27,6 +27,14 @@ const routes: Routes = [
         loadChildren: () => import('../add-profile/add-profile.module').then(m => m.AddProfilePageModule)
       },
       {
+        path: 'view-profile',
+        loadChildren: () => import('../view-profile/view-profile.module').then(m => m.ViewProfilePageModule)
+      },
+      {
+        path: 'view-profile/:profileId',
+        loadChildren: () => import('../view-profile/view-profile.module').then(m => m.ViewProfilePageModule)
+      },
+      {
         path: '',
         redirectTo: 'tab1',
         pathMatch: 'full'

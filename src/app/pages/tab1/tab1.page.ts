@@ -62,4 +62,7 @@ export class Tab1Page implements OnInit {
     this.router.navigate(['/tab/add-profile']);
   }
 
+  viewProfile(profileId: any) {
+    this.router.navigate(['/tab/view-profile', profileId]);
+  }
 }

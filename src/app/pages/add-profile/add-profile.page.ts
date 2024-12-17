@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WordpressService } from 'src/app/core/api/wordpress.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoaderService } from 'src/app/core/loader.service';
 
 @Component({
   selector: 'app-add-profile',
@@ -28,7 +30,9 @@ export class AddProfilePage implements OnInit {
 
   constructor(
     private wordpressService: WordpressService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private loaderService: LoaderService,
   ) { }
 
   ngOnInit() {
@@ -60,10 +64,13 @@ export class AddProfilePage implements OnInit {
     // Call createPost and subscribe to the response
     this.wordpressService.createPost(postData).subscribe(
       (response: any) => {
+        this.loaderService.showSuccess("Successfully Created Profile");
+        this.router.navigate(['/tab/tab1']);
         console.log('Post created:', response);
         // Handle successful post creation, e.g., navigate back or show success message
       },
       (error: any) => {
+        this.loaderService.showError("Error in creating profile");
         console.error('Error creating post:', error);
         // Handle error, show error message
       }

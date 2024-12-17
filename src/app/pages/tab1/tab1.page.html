@@ -13,7 +13,9 @@
 <ion-content *ngIf="!loading"
   id="myHoro">
   <ion-list>
-    <ion-item *ngFor="let post of posts"
+    <ion-item class=""
+      (click)="viewProfile(post.id)"
+      *ngFor="let post of posts"
       detail>
       <ion-avatar slot="start"
         class="large-avatar">
@@ -22,7 +24,15 @@
           alt="{{ post.title.rendered }}" />
       </ion-avatar>
       <ion-label>
-        <h2>{{ post.title.rendered }}</h2>
+        <h2>{{ post.meta.name }}</h2>
+        <p>{{ post.meta.star }},
+          {{ post.meta?.raasi }},
+          {{ post.meta?.sevvai ? "Sevvai" : "" }}
+
+        </p>
+
+
+
         <!-- <p>{{ }}</p> -->
       </ion-label>
     </ion-item>
